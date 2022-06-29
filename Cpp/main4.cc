@@ -10,7 +10,6 @@ private:
 
 public:
     Map();
-    ~Map();
     void init();
     void move();
     void print();
@@ -32,16 +31,16 @@ void Map::move()
 {
     int lock = 0;
     int tmp_lock = lock;
-    for (int x = 0; x < n; x++)
+    for (int y = n - 1; y >= 0; y--)
     {
         if (tmp_lock == lock)
         {
-            int y = 0;
+            int x = 0;
             matrix[y][x] = v;
             print();
-            for (y = 0; y < n - 1; y++)
+            for (x = 0; x < n - 1; x++)
             {
-                matrix[y + 1][x] = v;
+                matrix[y][x + 1] = v;
                 matrix[y][x] = 0;
                 print();
             }
@@ -50,12 +49,12 @@ void Map::move()
         }
         else
         {
-            int y = n - 1;
+            int x = n - 1;
             matrix[y][x] = v;
             print();
-            for (y = n - 1; y > 0; y--)
+            for (x = n - 1; x > 0; x--)
             {
-                matrix[y - 1][x] = v;
+                matrix[y][x - 1] = v;
                 matrix[y][x] = 0;
                 print();
             }
@@ -76,11 +75,6 @@ void Map::print()
         cout << "\n";
     }
     cout << "\n";
-}
-
-Map::~Map()
-{
-    v = 0;
 }
 
 int main()
