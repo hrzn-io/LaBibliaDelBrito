@@ -30,7 +30,7 @@ Map::Map()
 
 void Map::move()
 {
-    int lock = 1; 
+    int lock = 0; 
     int tmp_lock = lock;
     for(int x = n - 1 ; x >= 0 ; x--) {
         if(tmp_lock == lock) {

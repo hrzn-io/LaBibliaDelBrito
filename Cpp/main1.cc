@@ -30,8 +30,10 @@ Map::Map()
 
 void Map::move()
 {
+    int lock = 0;
+    int tmp_lock = lock;
     for(int x = 0 ; x < n ; x++) {
-        if(x%2 == 0) {
+        if(tmp_lock == lock) {
             int y = 0;
             matrix[y][x] = v;
             print();
@@ -41,6 +43,7 @@ void Map::move()
                 print();
             }
             matrix[y][x] = 0;
+            tmp_lock = !tmp_lock;
         } else {
             int y = n - 1;
             matrix[y][x] = v;
@@ -51,6 +54,7 @@ void Map::move()
                 print();
             }
             matrix[y][x] = 0;
+            tmp_lock = !tmp_lock;
         }
     }
 }
