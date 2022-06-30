@@ -10,8 +10,6 @@ private:
 
 public:
     Map();
-    ~Map();
-    void init();
     void move();
     void print();
 };
@@ -67,15 +65,15 @@ void Map::move()
 
 void Map::print()
 {
-    for (int x = 0; x <= n - 1; x++)
+    for(int x = 0; x <= n - 1; x++)
     {
-        for (int y = 0; y <= n - 1; y++)
+        for(int y = 0; y <= n - 1; y++)
         {
             cout << matrix[x][y] << " ";
         }
-        cout << "\n";
+        cout << endl;
     }
-    cout << "\n";
+    cout << endl;
 }
 
 Map::~Map()

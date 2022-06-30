@@ -10,8 +10,6 @@ private:
 
 public:
     Map();
-    ~Map();
-    void init();
     void move();
     void print();
 };
@@ -73,9 +71,9 @@ void Map::print()
         {
             cout << matrix[x][y] << " ";
         }
-        cout << "\n";
+        cout << endl;
     }
-    cout << "\n";
+    cout << endl;
 }
 
 Map::~Map()
